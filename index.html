@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Pos_System_SPA</title>
-
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css">
 
 </head>
 <body>
@@ -44,9 +44,10 @@
 <!--Home section starts-->
 
 <form class="row g-3">
+    <h4>Customer Details</h4>
     <div class="col-md-6">
-        <label for="inputEmail4" class="form-label">customer Id</label>
-        <input type="text" class="form-control" id="inputEmail4">
+        <label for="inputCusId" class="form-label">customer Id</label>
+        <input type="text" class="form-control" id="inputCusId">
     </div>
     <div class="col-md-6">
         <label for="inputName" class="form-label">customer name</label>
@@ -65,10 +66,53 @@
     </div>
 </form>
 
+<form class="row g-3">
+    <h4>Order Details</h4>
+    <div class="col-md-6">
+        <label for="inputOId" class="form-label">Order Id</label>
+        <input type="orderid" class="form-control" id="inputOId">
+    </div>
+    <div class="col-md-6">
+        <label for="inputItemId" class="form-label">Item Id</label>
+        <input type="itemid" class="form-control" id="inputItemId">
+    </div>
+    <div class="col-12">
+        <label for="inputIName" class="form-label">Item Name</label>
+        <input type="text" class="form-control" id="inputIName" placeholder="enter item name">
+    </div>
+    <div class="col-12">
+        <label for="inputprice" class="form-label">Price</label>
+        <input type="text" class="form-control" id="inputprice" placeholder="">
+    </div>
+    <div class="col-md-6">
+        <label for="inputQty" class="form-label">Quantity</label>
+        <input type="text" class="form-control" id="inputQty">
+    </div>
+    <div class="col-md-2">
+        <label for="inputQtyS" class="form-label">Qty in stock</label>
+        <input type="text" class="form-control" id="inputQtyS">
+    </div>
+    <div class="col-md-2">
+        <label for="inputDate" class="form-label">Date</label>
+        <input type="text" class="form-control" id="inputDate">
+    </div>
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary">Add to Cart</button>
+    </div>
+</form>
+<button id="ToCheckout" type="button" class="btn btn-primary">Go to Checkout</button>
+
+<!--Home section ends-->
+
+<!--ManageOrders section-->
 
 
 
 
 
+
+
+
+<script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
