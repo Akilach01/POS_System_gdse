@@ -18,22 +18,22 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" href="#Home">Home</a>
+                    <a class="nav-link" id="home_nav" href="#Home">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#Customers">Customers</a>
+                    <a class="nav-link" id="customer_nav" href="#Customers">Customers</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#Orders">Orders</a>
+                    <a class="nav-link" id="order_nav" href="#Orders">Orders</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#Items">Items</a>
+                    <a class="nav-link" id="item_nav" href="#Items">Items</a>
                 </li>
 <!--                <li class="nav-item">-->
 <!--                    <a class="nav-link" href="#Reports">Reports</a>-->
 <!--                </li>-->
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Logout</a>
+                    <a class="nav-link" id="logout_nav" href="#">Logout</a>
                 </li>
             </ul>
         </div>
@@ -104,6 +104,62 @@
 <button id="ToCheckout" type="button" class="btn btn-primary">Go to Checkout</button>
 </section>
 <!--Home section ends-->
+
+<!--Manage Customers section-->
+<section id="manage_customers">
+    <h2>Manage Customers</h2>
+    <h4>search customers</h4>
+    <div class="row">
+        <div class="col">
+            <input type="text" class="form-control" placeholder="enter a name to search" aria-label="name">
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" placeholder="customer id" aria-label="orderid">
+        </div>
+    </div>
+
+    <div class="d-grid gap-2 col-6 mx-auto">
+        <button class="btn btn-primary" type="button">Search</button>
+        <button class="btn btn-primary" type="button">Clear</button>
+    </div>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">customer id</th>
+            <th scope="col">customer name</th>
+            <th scope="col">address</th>
+            <th scope="col">contact no.</th>
+            <th scope="col">points</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th scope="row">C01</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+        </tr>
+        <tr>
+            <th scope="row">C02</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+        </tr>
+        <tr>
+            <th scope="row">C03</th>
+            <td>John</td>
+            <td>Doe</td>
+            <td>@social</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <button type="button" class="btn btn-success">Save</button>
+    <button type="button" class="btn btn-warning">Update</button>
+    <button type="button" class="btn btn-danger">Delete</button>
+    <button type="button" class="btn btn-info">View all</button>
+</section>
 
 <!--ManageOrders section-->
 <section id="manage_orders">
@@ -217,61 +273,7 @@
     <button type="button" class="btn btn-danger">Delete</button>
     <button type="button" class="btn btn-info">View all</button>
 </section>
-<!--Manage Customers section-->
-<section id="manage_customers">
-    <h2>Manage Customers</h2>
-    <h4>search customers</h4>
-    <div class="row">
-        <div class="col">
-            <input type="text" class="form-control" placeholder="enter a name to search" aria-label="name">
-        </div>
-        <div class="col">
-            <input type="text" class="form-control" placeholder="customer id" aria-label="orderid">
-        </div>
-    </div>
 
-    <div class="d-grid gap-2 col-6 mx-auto">
-        <button class="btn btn-primary" type="button">Search</button>
-        <button class="btn btn-primary" type="button">Clear</button>
-    </div>
-
-    <table class="table">
-        <thead>
-        <tr>
-            <th scope="col">customer id</th>
-            <th scope="col">customer name</th>
-            <th scope="col">address</th>
-            <th scope="col">contact no.</th>
-            <th scope="col">points</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>John</td>
-            <td>Doe</td>
-            <td>@social</td>
-        </tr>
-        </tbody>
-    </table>
-
-    <button type="button" class="btn btn-success">Save</button>
-    <button type="button" class="btn btn-warning">Update</button>
-    <button type="button" class="btn btn-danger">Delete</button>
-    <button type="button" class="btn btn-info">View all</button>
-</section>
 
 <!--checkout section-->
 <section id="checkout">
@@ -333,5 +335,24 @@
 <!--</section>-->
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/lib/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+<script type="module" src="controller/CustomerController.js"></script>
+<script type="module" src="controller/IndexController.js"></script>
+<script type="module" src="controller/OrderController.js"></script>
+<script type="module" src="controller/ItemController.js"></script>
+
+<script>
+    $("#customer_nav").on('click', function () {
+            $("#manage_customers").css("display", "block");
+            $("#home").css("display", "none");
+            $("#manage_items").css("display", "none");
+            $("#manage_orders").css("display", "none");
+            $("#logout").css("display", "none");
+        })
+
+</script>
 </body>
 </html>
